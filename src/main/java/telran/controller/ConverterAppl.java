@@ -13,9 +13,9 @@ import java.net.URISyntaxException;
 
 public class ConverterAppl {
     public static void main(String[] args) throws URISyntaxException {
-        String aKey = "c6b106dc52ff88c18e0d9611a1b5c347";
+        String aKey = "";        //----------->       Fill in your token here !
         RestTemplate restTemplate = new RestTemplate();
-        RequestEntity<String> requestEntity = new RequestEntity<>(HttpMethod.GET, new URI("http://data.fixer.io/api/latest?access_key="+aKey));
+        RequestEntity<String> requestEntity = new RequestEntity<>(HttpMethod.GET, new URI("http://data.fixer.io/api/latest?access_key=" + aKey));
         ResponseEntity<FixerDTO> responseEntity = restTemplate.exchange(requestEntity, FixerDTO.class);
         System.out.println("Status response: \n" + responseEntity.getStatusCode());
         System.out.println("The response is: \n" + responseEntity.getBody());
